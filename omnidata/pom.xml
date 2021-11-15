@@ -11,6 +11,7 @@
     <properties>
         <javax.inject.version>1</javax.inject.version>
         <dep.slf4j.version>1.7.32</dep.slf4j.version>
+        <dep.over.slf4j.version>1.7.25</dep.over.slf4j.version>
         <dep.logback.version>1.2.3</dep.logback.version>
         <dep.hetu.version>1.4.1</dep.hetu.version>
         <dep.airlift.version>206</dep.airlift.version>
@@ -18,7 +19,7 @@
         <dep.airlift.bytecode.version>1.2</dep.airlift.bytecode.version>
         <dep.airlift.slice.version>0.38</dep.airlift.slice.version>
         <dep.airlift.joni.version>2.1.5.3</dep.airlift.joni.version>
-        <dep.json.version>2.12.4</dep.json.version>
+        <dep.json.version>2.11.4</dep.json.version>
         <dep.guava.version>30.0-jre</dep.guava.version>
         <dep.hadoop.apache.version>3.2.0-8</dep.hadoop.apache.version>
         <dep.joda.version>2.10.5</dep.joda.version>
@@ -28,7 +29,6 @@
         <dep.commons.codec.version>1.14</dep.commons.codec.version>
         <dep.lucene.version>7.2.1</dep.lucene.version>
         <dep.bouncycastle.version>1.68</dep.bouncycastle.version>
-        <dep.melloware.version>1.9.3</dep.melloware.version>
         <dep.sparksql.version>3.0.1</dep.sparksql.version>
         <dep.aws.version>3.2.0</dep.aws.version>
         <dep.activation.version>1.1.1</dep.activation.version>
@@ -54,12 +54,6 @@
             <artifactId>commons-codec</artifactId>
             <version>${dep.commons.codec.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.melloware</groupId>
-            <artifactId>jasypt</artifactId>
-            <version>${dep.melloware.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>io.airlift</groupId>
             <artifactId>json</artifactId>
@@ -139,11 +133,6 @@
         </dependency>
         <dependency>
             <groupId>io.hetu.core</groupId>
-            <artifactId>hetu-filesystem-client</artifactId>
-            <version>${dep.hetu.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.hetu.core</groupId>
             <artifactId>presto-main</artifactId>
             <version>${dep.hetu.version}</version>
             <exclusions>
@@ -173,7 +162,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
-            <version>${dep.slf4j.version}</version>
+            <version>${dep.over.slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
