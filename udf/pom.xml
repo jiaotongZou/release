@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>udf-libs</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <dep.hetu.version>1.4.1</dep.hetu.version>
+        <dep.commons.lang.version>3.10 </dep.commons.lang.version>
+        <dep.airlift.slice.version>0.38</dep.airlift.slice.version>
+        <dep.guava.version>30.0-jre</dep.guava.version>
+        <dep.jackson.version>2.12.4</dep.jackson.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.airlift</groupId>
+            <artifactId>slice</artifactId>
+            <version>${dep.airlift.slice.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.hetu.core</groupId>
+            <artifactId>presto-spi</artifactId>
+            <version>${dep.hetu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${dep.commons.lang.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${dep.guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${dep.jackson.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
