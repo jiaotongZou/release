@@ -9,11 +9,11 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <dep.hetu.version>1.4.1</dep.hetu.version>
+        <dep.hetu.version>1.4.0</dep.hetu.version>
         <dep.commons.lang.version>3.10 </dep.commons.lang.version>
         <dep.airlift.slice.version>0.38</dep.airlift.slice.version>
         <dep.guava.version>30.0-jre</dep.guava.version>
-        <dep.jackson.version>2.11.4</dep.jackson.version>
+        <dep.jackson.version>2.12.4</dep.jackson.version>
     </properties>
 
     <dependencies>
